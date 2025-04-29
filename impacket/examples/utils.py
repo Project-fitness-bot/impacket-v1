@@ -250,8 +250,8 @@ def init_ldap_session(domain, username, password, lmhash, nthash, k, dc_ip, aesK
     if use_ldaps is True:
         try:
             return _init_ldap_connection(target, ssl.PROTOCOL_TLSv1_2, domain, username, password, lmhash, nthash, k, dc_ip, aesKey)
-        except ldap3.core.exceptions.LDAPSocketOpenError:
-            return _init_ldap_connection(target, ssl.PROTOCOL_TLSv1, domain, username, password, lmhash, nthash, k, dc_ip, aesKey)
+        #except ldap3.core.exceptions.LDAPSocketOpenError:
+            #return
     else:
         return _init_ldap_connection(target, None, domain, username, password, lmhash, nthash, k, dc_ip, aesKey)
 
